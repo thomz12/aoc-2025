@@ -5,6 +5,7 @@
 #include <string_view>
 #include <ranges>
 #include <chrono>
+#include <print>
 
 namespace Day01 {
     namespace {
@@ -77,7 +78,7 @@ auto RunPart(const std::int32_t part, auto function, std::string_view input) {
     const auto answer = function(input);
     const auto endTime = high_resolution_clock::now();
 
-    std::println("Part {}: {} ({})", part, answer, duration_cast<microseconds>(endTime - startTime));
+    std::println(std::cout, "Part {}: {} ({})", part, answer, duration_cast<microseconds>(endTime - startTime));
 }
 
 auto main() -> int {
